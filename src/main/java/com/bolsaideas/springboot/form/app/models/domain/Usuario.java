@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 
 public class Usuario {
 	
+	//Comentario
 	private String id;
 	
 	@NotEmpty(message = "El nombre no puede estar vacio")
