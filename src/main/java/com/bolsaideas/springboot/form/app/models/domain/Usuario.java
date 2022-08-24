@@ -1,30 +1,54 @@
 package com.bolsaideas.springboot.form.app.models.domain;
 
+import java.util.Date;
+
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+
+import com.bolsaideas.springboot.form.app.validation.IdentificadorRegex;
 
 public class Usuario {
 	
 	//Comentario
+	//@Pattern(regexp = "[0-9]{2}[.][\\d]{3}[.][\\d]{3}[-][A-Z]{1}")
+	@IdentificadorRegex
 	private String id;
 	
-	@NotEmpty(message = "El nombre no puede estar vacio")
+	//@NotEmpty(message = "El nombre no puede estar vacio")
 	private String nombre;
 	
 	@NotEmpty
 	private String apellidos;
 
-	@NotEmpty
+	@NotBlank
 	@Size(min = 3, max = 8)
 	private String username;
-	
+
 	@NotEmpty
 	private String password;
 	
 	@NotEmpty
 	@Email(message = "El correo no tiene el formato adecuado")
 	private String email;
+	
+	@NotNull
+	@Min(5)
+	@Max(5000)
+	private Integer cuenta;
+	
+	@NotNull
+	@Past
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fechaNacimiento;
+	
+	@NotEmpty
+	private String pais;
 
 	public String getUsername() {
 		return username;
@@ -72,6 +96,30 @@ public class Usuario {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public Integer getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(Integer cuenta) {
+		this.cuenta = cuenta;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
 }
