@@ -48,8 +48,8 @@ public class Usuario {
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
-	@NotEmpty
-	private String pais;
+	@NotNull
+	private Pais pais;
 	
 	@NotEmpty
 	private List<Role> roles;
@@ -125,11 +125,11 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 

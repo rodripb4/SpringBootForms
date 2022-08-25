@@ -3,8 +3,10 @@ package com.bolsaideas.springboot.form.app.services;
 import java.util.Arrays;
 import java.util.List;
 
-import com.bolsaideas.springboot.form.app.models.domain.Pais;
+import org.springframework.stereotype.Service;
 
+import com.bolsaideas.springboot.form.app.models.domain.Pais;
+@Service
 public class PaisServiceImpl implements PaisService {
 
 	private List<Pais> lista;

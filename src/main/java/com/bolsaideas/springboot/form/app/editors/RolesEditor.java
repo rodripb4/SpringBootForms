@@ -3,9 +3,10 @@ package com.bolsaideas.springboot.form.app.editors;
 import java.beans.PropertyEditorSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.bolsaideas.springboot.form.app.services.RoleService;
-
+@Component
 public class RolesEditor extends PropertyEditorSupport{
 
 	@Autowired

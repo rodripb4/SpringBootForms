@@ -3,8 +3,10 @@ package com.bolsaideas.springboot.form.app.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bolsaideas.springboot.form.app.models.domain.Role;
+import org.springframework.stereotype.Service;
 
+import com.bolsaideas.springboot.form.app.models.domain.Role;
+@Service
 public class RoleServiceImpl implements RoleService {
 
 	private List<Role> roles;
